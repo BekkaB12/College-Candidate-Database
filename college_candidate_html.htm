@@ -39,7 +39,7 @@
             cursor: move;
             text-align: center;
             font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-            box-shadow: 2px 2px 2px #eee;
+            box-shadow: 3px 3px 3px #eee;
         }
     </style>
 </head>
@@ -57,15 +57,15 @@
         </div>
         <div id="interview" class="section">
             <h1>Interview</h1>
-	    <div id="c3" class="card"><em>Student C</em></div>
+	    <div id="c3" class="card">Student C</div>
         </div>
 	<div id="offer" class="section">
             <h1>Offer</h1>
-	    <div id="c3" class="card"><em>Student D</em></div>
+	    <div id="c3" class="card">Student D</div>
         </div>
 	<div id="decline" class="section">
             <h1>Decline</h1>
-	    <div id="c3" class="card"><em>Student E</em></div>
+	    <div id="c3" class="card">Student E</div>
         </div>
     </div>
 
@@ -96,7 +96,7 @@
             e.target.style.visibility = 'visible';
         };
 
-        var lastEneterd;
+        var lastEntered;
 
         board.ondragenter = function(e) {
             console.log('dragenter');
