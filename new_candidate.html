@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="utf-8" />
 <title>New Candidate</title>
@@ -12,7 +14,7 @@
         <form action="#" th:action="@{/save}" th:object="${candidate}"
             method="post">
  
-            <table border="0" cellpadding="10">
+            <table border="1">
             <tr>
                     <td>Candidate ID:</td>
                     <td><input type="text" th:field="*{primaryKey}" /></td>
