@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<title>College Candidates</title>
+	<style>
+	#background {
+	    background: #999;
+	    width: 100%;
+	    min-height: 50em;
+	    margin: auto;
+	    border: solid 2px #000;
+	    background-image: url('https://img.freepik.com/free-photo/old-grunge-dark-textured-wooden-background-surface-old-brown-wood-texture_7182-333.jpg?size=626&ext=jpg');
+	    background-size: cover;
+ 	    background-repeat: no-repeat;
+	    background-position: center;
+	    }
+	    h1 {
+	    text-align: center;
+	    font-size: 40px;
+	    color: #fffdd0;
+	    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		}
+		a:link, a:visited {
+		color: #fffdd0;
+		border: none;
+		font-size: 18px;
+		text-decoration: underline;
+		font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		}
+		.button {
+		color: #100;
+		}
+		::-webkit-scrollbar {
+        	width: 20px;
+        	border: 2px solid #100;
+        }
+        ::-webkit-scrollbar-track {
+  			box-shadow: inset 0 0 5px grey;
+  			border-radius: 8px;
+		}
+		::-webkit-scrollbar-thumb {
+  			background: #fffdd0;
+  			border-radius: 10px;
+  			border: 2px solid #100;
+		}
+		#table {
+		font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		color: #fffdd0;
+		}
+	</style>
+</head>
+<body>
+<div id="background">
+	<div align="center">
+    <h1>College Candidates</h1>
+    <a href="/new">New Candidate</a>
+    <br/><br/>
+    <div id="table">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Candidate ID</th>
+                <th>First Name</th>
+                <th>Additional Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Position</th>
+                <th>School</th>
+                <th>Status</th>
+                <th>Other</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="candidate : ${listCandidates}">
+                <td th:text="${candidate.primaryKey}">Candidate ID</td>
+                <td th:text="${candidate.firstName}">First Name</td>
+                <td th:text="${candidate.additionalName}">Additional Name</td>
+                <td th:text="${candidate.lastName}">Last Name</td>
+                <td th:text="${candidate.emailAddress}">Email</td>
+                <td th:text="${candidate.phone}">Phone</td>
+                <td th:text="${candidate.position}">Position</td>
+				<td th:text="${candidate.status}">Status</td>
+				<td th:text="${candidate.other}">Other</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${candidate.primaryKey}}"><button>Edit</button></a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${candidate.primaryKey}}"><button>Delete</button></a>
+                </td>
+            </tr>
+        </tbody>
+    	</table>
+    </div>	
+    </div>
+</div>
+</body>
+</html>
